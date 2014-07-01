@@ -1286,7 +1286,7 @@ static inline BOOL checkForOpenDatabaseFatal(BOOL fatal)
     if (! enqueued) {
         onMainThreadAsync(^{
             [NSNotificationCenter.defaultCenter postNotificationName:name object:self.class userInfo:@{
-                FCModelInstanceSetKey : instance ? [NSMutableSet setWithObject:instance] : [NSMutableSet set],
+                FCModelInstanceSetKey : [NSSet setWithObject:instance],
                 FCModelChangedFieldsKey : changedFields
             }];
         });
