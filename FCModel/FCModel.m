@@ -342,7 +342,8 @@ static inline BOOL checkForOpenDatabaseFatal(BOOL fatal)
     }];
 
     va_end(args);
-    if (success) [self dataWasUpdatedExternally];
+    //in all the cases we use an executeUpdate, we don't need notifications to be sent out
+    //if (success) [self dataWasUpdatedExternally];
     return error;
 }
 
