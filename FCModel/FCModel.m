@@ -1200,7 +1200,7 @@ static inline BOOL checkForOpenDatabaseFatal(BOOL fatal)
     [g_instances enumerateKeysAndObjectsUsingBlock:^(Class class, NSMapTable *classInstances, BOOL *stop) {
         for (id primaryKeyValue in classInstances.keyEnumerator.allObjects) {
             modelsAreStillLoaded = YES;
-            NSLog(@"[FCModel] closeDatabase: %@ ID %@ is still retained by something and is being abandoned by FCModel. This can cause weird bugs. Don't let this happen.", NSStringFromClass(class), primaryKeyValue);
+//            NSLog(@"[FCModel] closeDatabase: %@ ID %@ is still retained by something and is being abandoned by FCModel. This can cause weird bugs. Don't let this happen.", NSStringFromClass(class), primaryKeyValue);
         }
     }];
     [g_instances removeAllObjects];
